@@ -20,12 +20,12 @@ def create_app(test_config=None):
             'hello.html'
         )   
 
-    @app.route('/say-my-name')
+    @app.route('/say-my-name') # add "?name=xx" in URL in browser to maka name appear. 
     def helloName():
         nameParam = request.args.get('name')
         return render_template(
             'hello_name.html',
-            personName=nameParam
+            personName= nameParam #statt nameParam, kann Name als String angegeben werden
         )    
 
     @app.route('/hello-all')
@@ -38,7 +38,7 @@ def create_app(test_config=None):
 
     @app.route('/form', methods=['GET', 'POST'])
     def form():
-        form = SampleForm()
+        form = SampleForm()  # every form needs a class which holds the data that is going to come in the form; class SampleForm links to forms.py
         if form.validate_on_submit():
             return redirect(url_for('hello'))
 
