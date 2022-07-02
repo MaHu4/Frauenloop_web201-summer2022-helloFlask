@@ -20,9 +20,25 @@
             {{ form.userName(class="form-control form-control-lg") }} <!--Input field-->
         {% endif %}
     </div>
+
+    <!-- added userAge field -->
+    <div class="form-group">
+        {{ form.userAge.label(class="form-control-label") }}
+        {% if form.userAge.errors %}
+            {{ form.userAge(class="form-control form-control-lg is-invalid") }} <!--Input field-->
+            <div class="invalid-feedback">
+                {% for error in form.userName.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.userAge(class="form-control form-control-lg") }} <!--Input field-->
+        {% endif %}
+    </div>
     
     <div class="form-group">
-        {{ form.submit(class="btn btn-outline-info") }}
-    </div>    
+        {{ form.submit(class="btn btn-outline-info")}}
+    </div>
+
 </form>
 {% endblock %}

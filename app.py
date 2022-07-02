@@ -47,6 +47,11 @@ def create_app(test_config=None):
             form=form
         )                        
 
+    # @app.route('/map')
+    # def map_func():
+    #     return render_template('map.html')
+    # if __name__ == '__main__':
+    #     app.run(debug = True)    
     # End Routes
 
     # Return the fully initialized app
