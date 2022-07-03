@@ -8,3 +8,6 @@ class SampleForm(FlaskForm):
     # # email = StringField('Your Email', [Email(message=('Not a valid email address.'))DataRequired()]
 
     submit = SubmitField('Submit')
+
+
+    # "userName", "userAge" and "submit" are attributes of the class SampleForm / of the objects of this class. They are also objects , because they are of type StringField and SubmitField respectively

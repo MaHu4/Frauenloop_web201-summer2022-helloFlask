@@ -69,7 +69,7 @@ We just need to put the files in a folder named `static`:
 We need to separate all this HTML / Presentation code into some other layer.
 For that, Flask gives us [Jinja templates](https://jinja.palletsprojects.com/en/3.1.x/templates/)! Jinja is a templating engine used not only by Flask but many others. 
 
-- We create templates in the `templates` folder. In class we created a single template file called hello.tml 
+- We create templates in the `templates` folder. In class we created a single template file called hello.html 
 - Something we did not use in class but is very helpful (and it is used in this sample repo): **layouts**. A layout is like a parent template with common / repeatable content, that has 'holes' or blocks, that each specific page can define content for. In this sample I created one `layout.html` and a couple templates that extend it (hello.html / hello_name.html)
 
 - Templates can receive parameters, can have loops, conditional logic, etc. We try some of this in `hello_name.html`and `hello_name_list.html`
