@@ -22,7 +22,8 @@ def create_app(test_config=None):
 
     @app.route('/say-my-name') # add "?name=xx" in URL in browser to maka name appear. 
     def helloName():
-        nameParam = request.args.get('name')
+        nameParam = request.args.get('name') #args hold the parameters from the URL (if they came)
+                                            # the param to get()  is the name of the URL param you want to get the value of, in our example name, after the ? --> http://127.0.0.1:5000/say-my-name?name=Maria
         return render_template(
             'hello_name.html',
             personName= nameParam #statt nameParam, kann Name als String angegeben werden
@@ -33,7 +34,7 @@ def create_app(test_config=None):
         allPeople = ['July', 'Ron', 'Sandra', 'Maria']
         return render_template(
             'hello_name_list.html',
-            personNamesList=allPeople
+            personNamesList=allPeople #personNameList is a keyword argument so an argument/parameter to the function render_template that was given a name, personNameList is the name, the value is the list that was stored as allPeople
         )  
 
     @app.route('/form', methods=['GET', 'POST'])
@@ -60,5 +61,5 @@ def create_app(test_config=None):
 
 app = create_app()
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT",5000))
+    port = int(os.environ.get("PORT",8000))
     app.run(host='127.0.0.1',port=port,debug=True)
